@@ -28,9 +28,9 @@ contract CrowdFunding{
         require(msg.value>=minimumContribution,"Minimum contribution not met");
         if(contributors[msg.sender]==0){
             noOfContributors++;
-            raisedAmount=raisedAmount+msg.value;
-            contributors[msg.sender]+=msg.value;
         }
+        raisedAmount=raisedAmount+msg.value;
+        contributors[msg.sender]+=msg.value;
     }
     function getContractBalance() public view returns(uint){
         return address(this).balance;
